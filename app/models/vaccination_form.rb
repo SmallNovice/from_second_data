@@ -1,0 +1,2 @@
+class VaccinationForm < ApplicationRecord
+end
