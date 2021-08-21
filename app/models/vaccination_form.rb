@@ -9,7 +9,9 @@ class VaccinationForm < ApplicationRecord
 
   end
 
-   def self.form_id
+  private
+
+  def self.form_id
    	@form_id = 86
-   end
+  end
 end
