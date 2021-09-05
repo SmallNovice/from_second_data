@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_16_171516) do
+ActiveRecord::Schema.define(version: 2021_09_01_155426) do
 
   create_table "vaccination_forms", force: :cascade do |t|
     t.string "company"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_08_16_171516) do
     t.integer "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "response_id"
   end
 
 end

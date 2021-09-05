@@ -1,17 +1,29 @@
 class VaccinationForm < ApplicationRecord
 	def self.build(values)
 			form = VaccinationForm.new(
-			company:	values['company']['text_value'].join(),
-			number: values['number']['text_value'].join(),
-			nonumber: values['nonumber']['text_value'].join(),
-			name: values['name']['text_value'].join(),
-			phone: values['phone']['text_value'].join().to_i)	
-
+      response_id: values['id'],   
+			company:	values['mapped_values']['company']['text_value'].join(),
+			number: values['mapped_values']['number']['text_value'].join(),
+			nonumber: values['mapped_values']['nonumber']['text_value'].join(),
+			name: values['mapped_values']['name']['text_value'].join(),
+			phone: values['mapped_values']['phone']['text_value'].join().to_i)	
   end
+
+  # enum event: {
+  #   FormEvent: 0,
+  #   ResponseEvent: 1
+  # }
+
+  # enum state: {
+  #   execute: 0,
+  #   done: 1,
+  #   failed: 2
+  # }
 
   private
 
   def self.form_id
-   	@form_id = 86
+   	form_id = 13050
   end
+
 end
