@@ -18,5 +18,8 @@ module FormSecondData
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.before_initialize do
+      system('sh update_form_started.rb')
+    end
   end
 end

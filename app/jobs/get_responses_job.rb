@@ -11,14 +11,14 @@ class GetResponsesJob < ApplicationJob
 
 			ActiveRecord::Base.transaction do
 				JSON.parse(responses).each do |response|
-					VaccinationForm.build(response['mapped_values']).save
+					VaccinationForm.build(response).save
 				end
 			end
 		end
 	end
 
 	private
-
+ 
 	def skylark_service
 		@skylark_service ||= SkylarkService.new 
 	end
